@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,9 +24,11 @@ export default function App() {
           <p className="mb-6 text-sm md:text-lg text-gray-100">
             Unlock your potential with expert-led courses and accelerate your career in mergers and acquisitions.
           </p>
+          <Link to={'/lessons'}>
           <button className="bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700">
             View Lessons
           </button>
+          </Link>
         </div>
       </section>
 

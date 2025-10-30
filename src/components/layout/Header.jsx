@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 // import { Link } from 'react-router-dom'; // Use Link components in your actual React Router setup
 
 const Header = () => {
@@ -17,9 +18,9 @@ const Header = () => {
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex md:space-x-8">
-            <a href="/" className="text-gray-900 hover:text-indigo-600 font-medium transition duration-150">Home</a>
-            <a href="/lessons" className="text-gray-900 hover:text-indigo-600 font-medium transition duration-150">Lessons</a>
-            <a href="/my-dashboard" className="text-gray-900 hover:text-indigo-600 font-medium transition duration-150">Dashboard</a>
+            <NavLink to="/" className="nav text-gray-900 hover:text-indigo-600 font-medium transition duration-150">Home</NavLink>
+            <NavLink to="/lessons" className="text-gray-900 hover:text-indigo-600 font-medium transition duration-150 nav">Lessons</NavLink>
+            <NavLink to="/my-dashboard" className=" text-gray-900 hover:text-indigo-600 font-medium transition duration-150 nav">Dashboard</NavLink>
             {/* <a href="/admin" className="text-gray-900 hover:text-indigo-600 font-medium transition duration-150">Admin</a> */}
           </nav>
 
@@ -56,9 +57,9 @@ const Header = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-xl pb-4">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a href="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Home</a>
-            <a href="/lessons" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Lessons</a>
-            <a href="/my-dashboard" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Dashboard</a>
+            <NavLink to="/" className="nav block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Home</NavLink>
+            <NavLink to="/lessons" className="nav block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Lessons</NavLink>
+            <NavLink href="/my-dashboard" className="nav block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Dashboard</NavLink>
             {/* <a href="/admin" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50 hover:text-indigo-600">Admin</a> */}
           </div>
           <div className="pt-4 pb-3 border-t border-gray-100">
