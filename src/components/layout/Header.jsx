@@ -65,7 +65,7 @@ const Header = () => {
           <div className="pt-4 pb-3 border-t border-gray-100">
             <div className="px-5 space-y-2">
               <Link to="/login" className="block w-full text-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50">Log In</Link>
-              <Link href="/register" className="block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Sign Up</Link>
+              <Link to="/register" className="block w-full text-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">Sign Up</Link>
             </div>
           </div>
         </div>
