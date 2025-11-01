@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PaystackButton } from "react-paystack";
+import { PaystackButton } from "paystack-react";
 
 const PaystackPayment = () => {
   const publicKey = "pk_test_162884f06e28545f737d29fe112e0fd09da43cac"; // your public key

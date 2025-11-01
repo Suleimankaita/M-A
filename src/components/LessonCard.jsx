@@ -1,7 +1,33 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link,  } from 'react-router-dom';
+import { PaystackButton } from "paystack-react";
+
 
 const LessonCard = ({ lesson, dashboardView = false }) => {
+ const publicKey = "pk_test_162884f06e28545f737d29fe112e0fd09da43cac"; // your public key
+  const amount = 5000 * 100; // amount in kobo (₦5000)
+  const [email, setEmail] = useState("suleiman20015kaita@gmai.com");
+  const [name, setName] = useState("suleiman");
+  const [modal, setmodal] = useState(false);
+
+  
+  const componentProps = {
+      email,
+      amount,
+      metadata: {
+        name,
+      },
+      publicKey,
+      text: "Buy",
+      onSuccess: (response) => {
+        alert(`Payment Successful! Reference: ${response.reference}`);
+        console.log("Success response:", response);
+      },
+      onClose: () => alert("Payment closed"),
+    };
+
+    
+
   return (
     <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden flex flex-col">
       {/* Image */}
@@ -48,13 +74,32 @@ const LessonCard = ({ lesson, dashboardView = false }) => {
                 Details
               </button>
               </Link>
-              <button className="flex-1 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-200">
-                Buy Now
+              <button onClick={()=>setmodal(prv=>!prv)} className="flex-1 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-200">
+                {/* Buy Now */}
+                <PaystackButton {
+                  ...{
+                      email,
+      amount:Number(lesson?.price),
+      metadata: {
+        name,
+      },
+      publicKey,
+      text: "Buy",
+      onSuccess: (response) => {
+        alert(`Payment Successful! Reference: ${response.reference}`);
+        console.log("Success response:", response);
+      },
+      onClose: () => alert("Payment closed"),
+                  }
+                } className="paystack-button" />
               </button>
             </div>
           </div>
         )}
       </div>
+      {/* {modal&&      <PaystackButton {...componentProps} className="paystack-button" /> */}
+      {/* } */}
+      
     </div>
   );
 };
