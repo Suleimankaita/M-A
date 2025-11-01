@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function App() {
@@ -10,13 +10,15 @@ export default function App() {
       {/* Navbar */}
       
       {/* Hero Section */}
+      <Suspense fallback={"Loading"}>
+
       <section
         className="bg-cover h-full bg-center pt-28 pb-16 md:py-32 "
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1598257006626-48b0c252070d?auto=format&fit=crop&w=1470&q=80')",
+          "url('https://images.unsplash.com/photo-1598257006626-48b0c252070d?auto=format&fit=crop&w=1470&q=80')",
         }}
-      >
+        >
         <div className="max-w-4xl mx-auto text-center text-white px-4 ">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
             Master the Art of M & A.<br /> Your Future Starts Here
@@ -62,6 +64,7 @@ export default function App() {
           </div>
         </div>
       </section>
+          </Suspense>
 
       {/* Upcoming Lessons */}
       <section className="py-12 bg-white">

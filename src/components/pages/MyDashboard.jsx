@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import LessonCard from '../LessonCard';
 
 // Mock Data for Purchased Lessons
@@ -46,7 +46,10 @@ const MyDashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {purchasedLessons.map((lesson) => (
               // dashboardView={true} activates progress/schedule view
+              <Suspense>
+
               <LessonCard key={lesson.id} lesson={lesson} dashboardView={true} />
+              </Suspense>
             ))}
           </div>
         </div>

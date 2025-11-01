@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 
 const LessonCard = ({ lesson, dashboardView = false }) => {
   return (
@@ -32,9 +32,11 @@ const LessonCard = ({ lesson, dashboardView = false }) => {
                   ></div>
                 </div>
             )}
+            <Link to={`/my-dashboard/${lesson.id}`} className={'w-full h-full justify-center items-center'}>
             <button className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-200">
               {lesson.format === 'online' ? 'Continue Lesson' : 'View Schedule'}
             </button>
+            </Link>
           </div>
         ) : (
           /* General Catalog View: Price and Buttons */

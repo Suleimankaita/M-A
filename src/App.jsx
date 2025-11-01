@@ -36,14 +36,16 @@ import Register from './components/pages/Auth/Register';
 import PaymentSuccess from './components/pages/Payment/PaymentSuccess';
 import PaymentFailure from './components/pages/Payment/PaymentFailure';
 import AdminDashboard from './components/pages/AdminDashboard'; 
+import ContinueLesson from './components/pages/ContinueLesson'; 
 import Layout from './components/layout/Layout';
-
+import Pay from "./components/pages/Pay"
 
 function App() {
   return (
     // If you already wrapped your app in <BrowserRouter> in index.js, remove <Router> here.
     // I'm keeping it for now based on your code, but it's typically done only once in the root.
     <Routes>
+         <Route path="/Pay" element={<Pay />} />
          <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} /> 
 
@@ -65,7 +67,11 @@ function App() {
         {/* 2. USER DASHBOARD */}
         {/* ========================================================== */}
         
-        <Route path="/my-dashboard" element={<MyDashboard />} />
+        <Route path="/my-dashboard" >
+        <Route index element={<MyDashboard />} />
+        <Route path="/my-dashboard/:id" element={<ContinueLesson />}/>
+      
+        </Route>
 
         {/* ========================================================== */}
         {/* 3. AUTH ROUTES (Using MinimalLayout) */}
