@@ -79,7 +79,7 @@ const LessonCard = ({ lesson, dashboardView = false }) => {
                 <PaystackButton {
                   ...{
                       email,
-      amount:Number(lesson?.price),
+      amount:Number(lesson?.price*100),
       metadata: {
         name,
       },
